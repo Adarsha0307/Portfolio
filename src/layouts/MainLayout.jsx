@@ -12,7 +12,7 @@ export default function MainLayout() {
     <>
       <SkipLink />
       <Navbar theme={theme} onToggleTheme={toggle} />
-      <main id="main-content" className="pt-16">
+      <main id="main-content" className="pt-20">
         <Outlet />
       </main>
       <Footer />
