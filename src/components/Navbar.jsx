@@ -32,7 +32,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6 md:justify-center"
       >
         <Link to="/" className="pointer-events-auto font-display text-lg font-semibold tracking-tight md:hidden" onClick={close}>
-          <span className="text-gold">A</span>B.U<span className="text-gold">.</span>
+          <span className="text-gold">A</span>darsha B U
         </Link>
 
         <div className={`pointer-events-auto hidden items-center gap-1 rounded-full border border-line bg-surface/90 p-1.5 backdrop-blur-xl transition-shadow duration-300 md:flex ${scrolled ? 'shadow-[0_14px_45px_rgba(0,0,0,0.24)]' : 'shadow-[0_10px_35px_rgba(0,0,0,0.16)]'}`}>

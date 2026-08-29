@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <p className="font-display text-xl font-semibold tracking-tight">
-              <span className="text-gold">A</span>B.U<span className="text-gold">.</span>
+              <span className="text-gold">A</span>darsha B U
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
               {profile.headline} Based in Karnataka, India — remote-friendly and building in public.
