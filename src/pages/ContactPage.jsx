@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { profile } from '../data/profile.js'
 import PageHeader from '../components/PageHeader.jsx'
@@ -37,6 +37,12 @@ export default function ContactPage() {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
 
+  useEffect(() => {
+    if (!['sent', 'error', 'unconfigured'].includes(status)) return undefined
+    const timer = window.setTimeout(() => setStatus('idle'), 7000)
+    return () => window.clearTimeout(timer)
+  }, [status])
+
   const set = (key) => (e) => {
     setForm((f) => ({ ...f, [key]: e.target.value }))
     setErrors((errs) => ({ ...errs, [key]: undefined }))
@@ -48,16 +54,19 @@ export default function ContactPage() {
     setErrors(errs)
     if (Object.keys(errs).length > 0) return
 
+    if (!FORMSPREE_ENDPOINT) {
+      setStatus('unconfigured')
+      return
+    }
+
     setStatus('sending')
     try {
-      if (FORMSPREE_ENDPOINT) {
-        const res = await fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(form),
-        })
-        if (!res.ok) throw new Error('Request failed')
-      }
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Request failed')
       setStatus('sent')
       setForm(emptyForm)
     } catch {
@@ -131,18 +140,6 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              {status === 'sent' && (
-                <Toast tone="success">Thanks — your message is on its way. I'll get back to you soon.</Toast>
-              )}
-              {status === 'error' && (
-                <Toast tone="error">
-                  Something went wrong sending the form. Please email me directly —{' '}
-                  <a href={`mailto:${profile.email}`} className="underline underline-offset-4">
-                    {profile.email}
-                  </a>
-                  .
-                </Toast>
-              )}
             </form>
           </Reveal>
 
@@ -188,6 +185,21 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </section>
+
+      {status === 'sending' && <Toast floating>Sending your message…</Toast>}
+      {status === 'sent' && (
+        <Toast tone="success" floating>Message sent successfully. Thanks — I'll get back to you soon.</Toast>
+      )}
+      {status === 'error' && (
+        <Toast tone="error" floating>
+          The message could not be sent. Please try again or email me directly at {profile.email}.
+        </Toast>
+      )}
+      {status === 'unconfigured' && (
+        <Toast tone="error" floating>
+          The contact form is not configured yet. Please use “Email directly” to reach me.
+        </Toast>
+      )}
     </>
   )
 }
