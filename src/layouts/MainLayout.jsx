@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 
 import SkipLink from '../components/SkipLink.jsx'
 import Navbar from '../components/Navbar.jsx'
@@ -7,6 +8,11 @@ import { useTheme } from '../hooks/useTheme.js'
 
 export default function MainLayout() {
   const { theme, toggle } = useTheme()
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname])
 
   return (
     <>
