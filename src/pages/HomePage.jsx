@@ -19,7 +19,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-grid bg-grid-fade relative overflow-hidden border-b border-line">
+      <section className="relative overflow-hidden border-b border-line">
+        <div className="bg-grid bg-grid-fade pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="glow-gold pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-28 sm:px-6 md:pt-36 lg:pb-28">
           <Reveal>
