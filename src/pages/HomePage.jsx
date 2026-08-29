@@ -5,7 +5,6 @@ import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SectionHeader from '../components/SectionHeader.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
-import SupportBlock from '../components/SupportBlock.jsx'
 import CTABlock from '../components/CTABlock.jsx'
 import { useDocumentMeta } from '../hooks/useDocumentMeta.js'
 import { meta } from '../data/site.js'
@@ -159,7 +158,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SupportBlock />
       <CTABlock />
     </>
   )
