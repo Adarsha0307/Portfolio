@@ -4,27 +4,59 @@
 export const skills = [
   {
     group: 'Frontend',
-    items: ['React', 'Vite', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS'],
+    items: [
+      ['React', 'https://img.icons8.com/color/48/react-native.png'],
+      ['Vite', 'https://img.icons8.com/fluency/48/vite.png'],
+      ['Next.js', 'https://img.icons8.com/fluency-systems-filled/48/nextjs.png'],
+      ['TypeScript', 'https://img.icons8.com/color/48/typescript.png'],
+      ['JavaScript', 'https://img.icons8.com/color/48/javascript.png'],
+      ['Tailwind CSS', 'https://img.icons8.com/color/48/tailwindcss.png'],
+    ],
   },
   {
     group: 'Backend & APIs',
-    items: ['Node.js', 'Express', 'Python', 'FastAPI', 'REST APIs', 'Celery'],
+    items: [
+      ['Node.js', 'https://img.icons8.com/color/48/nodejs.png'],
+      ['Express', 'https://img.icons8.com/fluency-systems-filled/48/express-js.png'],
+      ['Python', 'https://img.icons8.com/color/48/python.png'],
+      ['FastAPI', 'https://img.icons8.com/color/48/fastapi.png'],
+      ['REST APIs', 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-api-web-development-flaticons-lineal-color-flat-icons-2.png'],
+      ['Celery', 'https://img.icons8.com/color/48/celery.png'],
+    ],
   },
   {
     group: 'Data',
-    items: ['PostgreSQL'],
+    items: [['PostgreSQL', 'https://img.icons8.com/color/48/postgreesql.png']],
   },
   {
     group: 'Security & Auth',
-    items: ['JWT', 'bcrypt', 'Secure headers', 'Input validation', 'Rate limiting'],
+    items: [
+      ['JWT', 'https://img.icons8.com/color/48/key--v1.png'],
+      ['bcrypt', 'https://img.icons8.com/color/48/password1.png'],
+      ['Secure headers', 'https://img.icons8.com/color/48/security-checked.png'],
+      ['Input validation', 'https://img.icons8.com/color/48/checked-identification-documents.png'],
+      ['Rate limiting', 'https://img.icons8.com/color/48/speed.png'],
+    ],
   },
   {
     group: 'AI',
-    items: ['AI API integration', 'RAG', 'MCP', 'AI-assisted development'],
+    items: [
+      ['AI API integration', 'https://img.icons8.com/fluency/48/artificial-intelligence.png'],
+      ['RAG', 'https://img.icons8.com/color/48/search-in-cloud.png'],
+      ['MCP', 'https://img.icons8.com/color/48/data-transfer.png'],
+      ['AI-assisted development', 'https://img.icons8.com/color/48/code.png'],
+    ],
   },
   {
     group: 'Tools & Platforms',
-    items: ['Git', 'GitHub', 'Docker', 'Vercel', 'Render', 'VS Code'],
+    items: [
+      ['Git', 'https://img.icons8.com/color/48/git.png'],
+      ['GitHub', 'https://img.icons8.com/fluency-systems-filled/48/github.png'],
+      ['Docker', 'https://img.icons8.com/color/48/docker.png'],
+      ['Vercel', 'https://img.icons8.com/fluency-systems-filled/48/vercel.png'],
+      ['Render', 'https://img.icons8.com/color/48/cloud.png'],
+      ['VS Code', 'https://img.icons8.com/color/48/visual-studio-code-2019.png'],
+    ],
   },
 ]
 

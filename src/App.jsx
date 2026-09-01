@@ -7,6 +7,7 @@ import ProjectsPage from './pages/ProjectsPage.jsx'
 import ProjectPage from './pages/ProjectPage.jsx'
 import JourneyPage from './pages/JourneyPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
+import ResumePage from './pages/ResumePage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/projects/:slug" element={<ProjectPage />} />
         <Route path="/journey" element={<JourneyPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/resume" element={<ResumePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

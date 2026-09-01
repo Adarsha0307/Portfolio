@@ -11,28 +11,22 @@ export function Field({ label, htmlFor, error, hint, children }) {
   )
 }
 
-export function Input({ id, type = 'text', value, onChange, required, autoComplete, placeholder }) {
+export function Input({ id, type = 'text', ...props }) {
   return (
     <input
       id={id}
       type={type}
-      value={value}
-      onChange={onChange}
-      required={required}
-      autoComplete={autoComplete}
-      placeholder={placeholder}
+      {...props}
       className="h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-text placeholder:text-muted/60 transition-colors focus:border-gold focus:outline-none"
     />
   )
 }
 
-export function Select({ id, value, onChange, required, options }) {
+export function Select({ id, options, ...props }) {
   return (
     <select
       id={id}
-      value={value}
-      onChange={onChange}
-      required={required}
+      {...props}
       className="h-12 w-full appearance-none rounded-md border border-line bg-surface px-4 text-sm text-text transition-colors focus:border-gold focus:outline-none"
     >
       <option value="" disabled>
@@ -47,14 +41,11 @@ export function Select({ id, value, onChange, required, options }) {
   )
 }
 
-export function Textarea({ id, value, onChange, required, placeholder, rows = 6 }) {
+export function Textarea({ id, rows = 6, ...props }) {
   return (
     <textarea
       id={id}
-      value={value}
-      onChange={onChange}
-      required={required}
-      placeholder={placeholder}
+      {...props}
       rows={rows}
       className="w-full rounded-md border border-line bg-surface px-4 py-3 text-sm text-text placeholder:text-muted/60 transition-colors focus:border-gold focus:outline-none"
     />

@@ -4,7 +4,6 @@ import { Outlet, useLocation } from 'react-router-dom'
 import SkipLink from '../components/SkipLink.jsx'
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
-import SupportBlock from '../components/SupportBlock.jsx'
 import { useTheme } from '../hooks/useTheme.js'
 
 export default function MainLayout() {
@@ -19,11 +18,10 @@ export default function MainLayout() {
     <>
       <SkipLink />
       <Navbar theme={theme} onToggleTheme={toggle} />
-      <main id="main-content" className="pt-20">
+      <main id="main-content" className="pb-24 md:pb-0 md:pt-20">
         <Outlet />
       </main>
       <Footer />
-      <SupportBlock />
     </>
   )
 }

@@ -13,8 +13,8 @@ import { IconArrowRight, IconShield, IconLayers, IconCpu } from '../components/i
 const capIcons = [IconLayers, IconCpu, IconShield, IconArrowRight]
 
 const buildSignals = [
-  { value: '03', label: 'products shipped' },
-  { value: '20', label: 'stage AI pipeline' },
+  { value: '03', label: 'documented projects' },
+  { value: '02', label: 'deployed prototypes' },
   { value: '2029', label: 'graduating' },
 ]
 
@@ -37,24 +37,26 @@ export default function HomePage() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60 motion-reduce:animate-none" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
                 </span>
-                <span className="meta-sm text-muted">Open to internships &amp; select freelance work</span>
+                <span className="meta-sm text-muted">Open to remote internships &amp; selected freelance projects</span>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <p className="meta mt-10 text-muted">Adarsha B U · Karnataka, India</p>
               <h1 className="display-lg mt-4 max-w-4xl">
-                I build software that thinks{' '}
-                <span className="text-gold">clearly</span> and ships{' '}
-                <span className="text-gold">securely.</span>
+                Full-stack developer building secure,{' '}
+                <span className="text-gold">AI-powered applications.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
-              <p className="lede mt-6 max-w-2xl text-muted">{profile.context}</p>
+              <p className="lede mt-6 max-w-2xl text-muted">
+                I’m Adarsha B U, a second-year CSBS student using React, Node.js, Python and PostgreSQL to turn practical problems into deployed prototypes.
+              </p>
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Button to="/projects" size="lg">Explore selected work</Button>
-                <Button to="/contact" variant="ghost" size="lg" icon={false}>Start a conversation</Button>
+                <Button to="/projects" size="lg">View Projects</Button>
+                <Button to="/resume" variant="ghost" size="lg" icon={false}>View Résumé</Button>
+                <Button to="/contact" variant="ghost" size="lg" icon={false}>Contact Me</Button>
               </div>
             </Reveal>
           </div>
@@ -115,7 +117,7 @@ export default function HomePage() {
       <section aria-labelledby="work-title" className="border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeader index="02" title="Selected work" intro="Every project is live or has a public repository — with the evidence to prove it." />
+            <SectionHeader index="02" title="Selected work" intro="Documented prototypes with public demos or repositories where verification is available." />
             <Reveal>
               <Button to="/projects" variant="ghost" icon={false}>
                 All projects
@@ -149,7 +151,7 @@ export default function HomePage() {
       {/* Journey teaser */}
       <section aria-labelledby="journey-title" className="border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-          <SectionHeader index="04" title="The journey so far" intro="Competitions, leadership, and virtual experiences — every entry verifiable, none inflated." />
+          <SectionHeader index="04" title="The journey so far" intro="Competitions, leadership, and virtual experiences with proof links where available." />
           <Reveal className="mt-12 flex flex-wrap items-center gap-4">
             <Button to="/journey" variant="ghost" icon={false}>
               Read the journey

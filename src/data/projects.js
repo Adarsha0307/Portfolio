@@ -10,7 +10,7 @@ export const projects = [
     slug: 'nexnethra',
     name: 'Nexnethra',
     category: 'AI-powered cybersecurity platform',
-    status: 'Live',
+    status: 'Existing web prototype',
     featured: true,
     tagline:
       'Security analysis, threat awareness, and AI-assisted guidance in one full-stack platform.',
@@ -56,15 +56,15 @@ export const projects = [
     challenge:
       'Keeping the AI assistant grounded — its guidance must support, not replace, the structured analyzers. And the security layer had to protect every route from the first commit, not the last.',
     solution:
-      'A live platform where URL, email, and password analysis, security scoring, incident reporting, and AI guidance work together from one dashboard.',
+      'An existing web prototype intended to bring URL, email, and password analysis, security scoring, incident reporting, and AI guidance into one dashboard.',
     securityNotes:
       'JWT-based authentication with bcrypt password hashing, secure headers, rate limiting, and input validation across the API.',
     aiNotes:
       'Real-time AI-assisted security guidance via OpenRouter and NVIDIA API integrations.',
     result: 'No verified metrics currently.',
-    evidence: 'Live demo (public) · Repository: private — source is not exposed.',
+    evidence: 'Existing web prototype · Repository: private — implementation claims cannot be independently verified.',
     links: {
-      demo: { href: 'https://nexnethra.vercel.app/', label: 'Live Demo', primary: true },
+      demo: { href: 'https://nexnethra.vercel.app/', label: 'Open Prototype', primary: false },
       source: { private: true, label: 'Source — Private Repository' },
     },
     seo: {
@@ -72,39 +72,40 @@ export const projects = [
       description:
         'Case study: Nexnethra, a full-stack AI-powered cybersecurity platform with URL, email, and password analysis, security scoring, incident reporting, and AI-assisted guidance. Built with React, Node.js, Express, and PostgreSQL.',
     },
+    screenshotCaption: 'Nexnethra — existing web prototype for a cybersecurity analysis dashboard.',
   },
   {
     slug: 'docuflow-ai',
     name: 'DocuFlow-AI',
-    category: 'AI workflow / backend engineering',
-    status: 'Public repo · Demo coming soon',
+    category: 'AI workflow backend prototype',
+    status: 'Public repo · Backend prototype',
     featured: true,
     tagline:
-      'Production-oriented AI video pipeline backend built around multi-stage workflow orchestration.',
+      'Backend prototype for AI video pipeline orchestration — FastAPI, Celery workers, multi-stage workflow engine with human-approval gates.',
     problem:
       'Long AI video pipelines are hard to run reliably: many stages, human approval points, provider-specific LLM calls, and metered usage that needs to be tracked and billed.',
     why:
       'Teams that ship AI video products need a pipeline where every stage is observable, approvable, and repeatable — not a chain of scripts.',
     approach:
-      'Built a multi-tenant FastAPI backend with Celery workers executing a 20-stage workflow engine that includes human-approval gates, provider-agnostic LLM integration, credit billing, and RAG for grounding.',
+      'Built a multi-tenant FastAPI backend with Celery workers executing a workflow engine that includes human-approval gates, provider-agnostic LLM integration, credit billing, and RAG for grounding. The pipeline stages are implemented as modular Celery tasks; the "20-stage" claim refers to the designed workflow architecture — actual implemented stages are documented in the repository.',
     architecture: {
       summary:
-        'FastAPI API layer; Celery workers for long-running pipeline stages; a 20-stage workflow engine with human-approval gates; provider-agnostic LLM layer with credit billing; RAG for document grounding; MCP server; Docker + docker-compose; Render deployment config; automated test suite.',
+        'FastAPI API layer; Celery workers for long-running pipeline stages; modular workflow engine with human-approval gates; provider-agnostic LLM layer with credit billing; RAG for document grounding; MCP server; Docker + docker-compose; Render deployment config; automated test suite.',
       diagram: [
         { title: 'FastAPI', sub: 'Multi-tenant API' },
         { title: 'Celery', sub: 'Async workers' },
-        { title: '20-stage engine', sub: 'Human-approval gates' },
+        { title: 'Workflow engine', sub: 'Human-approval gates · modular stages' },
         { title: 'LLM layer', sub: 'Provider-agnostic · billing' },
         { title: 'RAG + MCP', sub: 'Grounding · tool access' },
       ],
     },
     stack: {
       backend: ['Python', 'FastAPI', 'Celery', 'REST APIs'],
-      workflow: ['20-stage engine', 'Human-approval gates', 'Credit billing', 'RAG', 'MCP server'],
+      workflow: ['Modular workflow engine', 'Human-approval gates', 'Credit billing', 'RAG', 'MCP server'],
       devops: ['Docker', 'docker-compose', 'Render', 'Automated tests'],
     },
     contribution:
-      'Designed and implemented the backend pipeline end to end — workflow engine, API, workers, billing, and deployment configuration. The public repository documents the full breakdown.',
+      'Designed and implemented the backend pipeline — workflow engine, API, workers, billing, and deployment configuration. The public repository documents the implementation.',
     decisions: [
       {
         title: 'Human-approval gates',
@@ -120,46 +121,47 @@ export const projects = [
       },
     ],
     challenge:
-      'Orchestrating 20 stages without losing state or blocking on long runs, while keeping the system multi-tenant safe and deployable on free-tier infrastructure.',
+      'Orchestrating multiple pipeline stages without losing state or blocking on long runs, while keeping the system multi-tenant safe and deployable on free-tier infrastructure.',
     solution:
-      'A modular pipeline backend where stages stay decoupled, approvals are first-class workflow steps, and the whole system deploys with Docker on free-tier Render.',
+      'A modular pipeline backend where stages stay decoupled, approvals are first-class workflow steps, and the system deploys with Docker on free-tier Render. The exact number of implemented stages is documented in the repository.',
     securityNotes:
       'Multi-tenant isolation and metered credit usage designed into the API layer.',
     aiNotes:
       'Provider-agnostic LLM integration, RAG for document grounding, and an MCP server for tool access.',
-    result: 'No verified metrics currently. (Verified architectural scope: 20-stage workflow engine.)',
+    result: 'No verified metrics currently. Backend prototype with modular workflow engine; production deployment would require further hardening.',
     evidence: 'Public GitHub repository · Automated test suite included.',
     links: {
       github: { href: 'https://github.com/Adarsha0307/DocuFlow-AI', label: 'GitHub Repository', primary: true },
-      demo: { comingSoon: true, label: 'Demo — Coming Soon' },
+      demo: { comingSoon: true, label: 'Demo — Not Available' },
     },
-    seo: {
-      title: 'DocuFlow-AI — AI Video Pipeline Backend | Adarsha B U',
+seo: {
+      title: 'DocuFlow-AI — AI Video Pipeline Backend Prototype | Adarsha B U',
       description:
-        'Case study: DocuFlow-AI, a production-oriented AI video pipeline backend — FastAPI, Celery workers, 20-stage workflow engine with human-approval gates, provider-agnostic LLM billing, RAG, and MCP server.',
+        'Case study: DocuFlow-AI, an AI video pipeline backend prototype — FastAPI, Celery workers, modular workflow engine with human-approval gates, provider-agnostic LLM billing, RAG, and MCP server.',
     },
+    screenshotCaption: 'DocuFlow-AI — backend prototype; no live UI available. Architecture diagram shown instead.',
   },
   {
     slug: 'taskapex',
     name: 'TaskApex',
-    category: 'Full-stack productivity application',
-    status: 'Live',
+    category: 'Full-stack task-management prototype',
+    status: 'Live · Prototype',
     featured: false,
     tagline:
-      'A task manager with real authentication, cross-device sessions, and a dark responsive dashboard.',
+      'A task manager prototype with JWT-based authentication, httpOnly cookies, and per-device session tracking. Uses in-memory storage.',
     problem:
       'Simple task apps rarely persist across devices, and most personal ones have no real authentication at all.',
     why:
       'A task manager that logs you out of context on one device or exposes session state in client JavaScript is not production software.',
     approach:
-      'Built a Next.js 14 application with a tasks API, JWT sessions stored in httpOnly cookies, per-device session tracking, and a responsive dark UI.',
+      'Built a Next.js 14 application with a tasks API, JWT sessions stored in httpOnly cookies, per-device session tracking, and a responsive dark UI. Currently uses in-memory Map storage for users and tasks (prototype limitation).',
     architecture: {
       summary:
-        'Next.js 14 (App Router) + TypeScript. API routes for authentication (register/login, session, logout) and task CRUD. JWT via the jose library in httpOnly cookies with unique device IDs per session; bcryptjs password hashing. Tailwind CSS with a shadcn-style component structure. Deployed on Vercel.',
+        'Next.js 14 (App Router) + TypeScript. API routes for authentication (register/login, session, logout) and task CRUD. JWT via the jose library in httpOnly cookies with unique device IDs per session; bcryptjs password hashing. In-memory Map storage for users and tasks (data resets on serverless cold starts). Tailwind CSS with a shadcn-style component structure. Deployed on Vercel.',
       diagram: [
         { title: 'Next.js 14', sub: 'App Router · TypeScript' },
         { title: 'Auth API', sub: 'JWT · httpOnly cookie' },
-        { title: 'Tasks API', sub: 'CRUD' },
+        { title: 'Tasks API', sub: 'CRUD · In-memory storage' },
         { title: 'Dashboard', sub: 'Dark UI · responsive' },
       ],
     },
@@ -177,7 +179,7 @@ export const projects = [
       },
       {
         title: 'Per-device session tracking',
-        body: 'Each device gets a unique ID in its session, so cross-device behavior stays consistent.',
+        body: 'Each device gets a unique ID in its session, so cross-device behavior stays consistent within a single deployment instance.',
       },
       {
         title: 'Hashed credentials',
@@ -185,22 +187,23 @@ export const projects = [
       },
     ],
     challenge:
-      'Getting session semantics right across devices — a logout on one device has to behave predictably without breaking sessions on another.',
+      'Implementing JWT authentication with httpOnly cookies in a serverless environment while managing session state. In-memory storage means data does not persist across serverless function cold starts or scale events.',
     solution:
-      'A working task manager where login, tasks, and session state behave like a production application.',
-    securityNotes: 'JWT in httpOnly, secure, sameSite cookies; bcrypt password hashing; input validation on API endpoints.',
+      'A working task manager prototype where login, tasks, and session state behave correctly within a single deployment instance. Data persistence across deployments requires a database (not yet implemented).',
+    securityNotes: 'JWT in httpOnly, secure, sameSite cookies; bcrypt password hashing; input validation on API endpoints. In-memory storage is a prototype limitation.',
     aiNotes: null,
-    result: 'No verified metrics currently.',
+    result: 'No verified metrics currently. Prototype demonstrates authentication architecture; production deployment would require persistent database.',
     evidence: 'Live demo · Public GitHub repository.',
     links: {
       demo: { href: 'https://taskapex.vercel.app/', label: 'Live Demo', primary: false },
       github: { href: 'https://github.com/Adarsha0307/TaskApex', label: 'GitHub Repository', primary: false },
     },
     seo: {
-      title: 'TaskApex — Full-Stack Task Manager | Adarsha B U',
+      title: 'TaskApex — Task Management Prototype | Adarsha B U',
       description:
-        'Case study: TaskApex, a Next.js 14 task manager with JWT authentication in httpOnly cookies, per-device sessions, task CRUD API, and a responsive dark dashboard.',
+        'Case study: TaskApex, a Next.js 14 task manager prototype with JWT authentication in httpOnly cookies, per-device sessions, and task CRUD API. Uses in-memory storage (prototype limitation).',
     },
+    screenshotCaption: 'TaskApex — responsive dark dashboard with task list and JWT-based authentication.',
   },
 ]
 

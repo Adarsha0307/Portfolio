@@ -9,7 +9,18 @@ export default function Timeline({ items }) {
           />
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <h3 className="font-display text-base font-semibold">{item.title}</h3>
-            <span className="meta-sm text-gold">{item.evidence}</span>
+            {item.evidenceUrl ? (
+              <a
+                href={item.evidenceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="meta-sm text-gold underline underline-offset-2 hover:text-gold-2"
+              >
+                {item.evidence}
+              </a>
+            ) : (
+              <span className="meta-sm text-gold">{item.evidence}</span>
+            )}
           </div>
           <p className="mt-1 text-sm text-muted">{item.org}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted">{item.note}</p>

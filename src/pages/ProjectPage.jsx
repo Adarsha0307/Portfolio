@@ -85,7 +85,7 @@ export default function ProjectPage() {
             <Screenshot
               slug={project.slug}
               name={project.name}
-              caption={`${project.name} — actual product screenshot pending capture.`}
+              caption={project.screenshotCaption || `${project.name} — screenshot not yet available.`}
             />
           </Reveal>
         </div>
