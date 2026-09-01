@@ -4,8 +4,6 @@ import { site } from '../data/site.js'
 import { profile } from '../data/profile.js'
 import { IconGitHub, IconLinkedIn, IconMail } from './icons.jsx'
 
-const SUPPORT_URL = 'https://buymeacoffee.com/adarshabu'
-
 export default function Footer() {
   return (
     <footer className="border-t border-line">
@@ -68,22 +66,6 @@ export default function Footer() {
             © {new Date().getFullYear()} {profile.name}. Built with React & Tailwind CSS.
           </p>
           <p className="text-xs text-muted">Last updated {site.lastUpdated}</p>
-        </div>
-
-        <div className="mt-8 border-t border-line pt-6">
-          <a
-            href={SUPPORT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Buy me a coffee — opens in a new tab"
-            className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-gold"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden="true">
-              <path d="M5 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V8Z" />
-              <path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M7 21h12M8 4c0 1 1 1 1 2M12 4c0 1 1 1 1 2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Buy me a coffee
-          </a>
         </div>
 
       </div>
