@@ -19,10 +19,12 @@ export default function HomePage() {
             <p className="intro-description">Full-stack developer and CSBS student building web applications with AI and security in mind. Based in Karnataka, open to working everywhere.</p>
             <div className="editorial-actions"><a className="editorial-primary" href="#selected-work">Explore my work <span aria-hidden="true">↗</span></a><Link className="editorial-link" to="/resume">View résumé <span aria-hidden="true">↗</span></Link></div>
           </div>
-          <Link className="hero-project" to="/projects/nexnethra" aria-label="Explore the Nexnethra case study">
-            <ProjectVisual project={projects[0]} />
-            <div className="hero-project-label"><div><span className="eyebrow">Featured exploration</span><strong>Nexnethra</strong></div><span className="round-arrow" aria-hidden="true">↗</span></div>
-          </Link>
+          <figure className="hero-portrait">
+            <div className="portrait-frame">
+              <img src="/images/adarsha-portrait.jpeg" alt="Adarsha B U wearing glasses and a beige blazer" width="400" height="400" fetchPriority="high" />
+            </div>
+            <figcaption><span>Adarsha B U</span><span>Developer · Karnataka, India</span></figcaption>
+          </figure>
         </div>
         <div className="intro-bottom"><span>React / Node.js / Python / PostgreSQL</span><span>Thoughtful interfaces. Practical engineering.</span></div>
       </section>
