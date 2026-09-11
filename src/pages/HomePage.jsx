@@ -1,166 +1,48 @@
+import { Link } from 'react-router-dom'
 import { profile } from '../data/profile.js'
-import { featuredProjects, supportingProjects } from '../data/projects.js'
-import { capabilities } from '../data/skills.js'
-import Button from '../components/Button.jsx'
-import Reveal from '../components/Reveal.jsx'
-import SectionHeader from '../components/SectionHeader.jsx'
-import ProjectCard from '../components/ProjectCard.jsx'
-import CTABlock from '../components/CTABlock.jsx'
+import { projects } from '../data/projects.js'
+import ProjectVisual from '../components/ProjectVisual.jsx'
 import { useDocumentMeta } from '../hooks/useDocumentMeta.js'
 import { meta } from '../data/site.js'
-import { IconArrowRight, IconShield, IconLayers, IconCpu } from '../components/icons.jsx'
-
-const capIcons = [IconLayers, IconCpu, IconShield, IconArrowRight]
-
-const buildSignals = [
-  { value: '03', label: 'documented projects' },
-  { value: '02', label: 'deployed prototypes' },
-  { value: '2029', label: 'graduating' },
-]
-
-const coreStack = ['React', 'Node.js', 'Python', 'PostgreSQL', 'AI APIs', 'Security']
+import '../editorial.css'
 
 export default function HomePage() {
   useDocumentMeta(meta.default)
-
   return (
-    <>
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="bg-grid bg-grid-fade pointer-events-none absolute inset-0" aria-hidden="true" />
-        <div className="glow-gold pointer-events-none absolute inset-0" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-6xl gap-14 px-4 pb-20 pt-24 sm:px-6 md:pt-32 lg:grid-cols-[minmax(0,1.45fr)_minmax(300px,0.55fr)] lg:items-end lg:pb-24">
+    <div className="editorial-home">
+      <section className="intro-section" aria-labelledby="intro-title">
+        <div className="intro-topline"><span>ADARSHA B U / DEVELOPER</span><span className="availability">Open to opportunities</span></div>
+        <div className="intro-grid">
           <div>
-            <Reveal>
-              <div className="inline-flex items-center gap-3 rounded-full border border-line bg-surface/70 px-4 py-2 backdrop-blur">
-                <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60 motion-reduce:animate-none" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
-                </span>
-                <span className="meta-sm text-muted">Open to remote internships &amp; selected freelance projects</span>
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <p className="meta mt-10 text-muted">Adarsha B U · Karnataka, India</p>
-              <h1 className="display-lg mt-4 max-w-4xl">
-                Full-stack developer building secure,{' '}
-                <span className="text-gold">AI-powered applications.</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="lede mt-6 max-w-2xl text-muted">
-                I’m Adarsha B U, a second-year CSBS student using React, Node.js, Python and PostgreSQL to turn practical problems into deployed prototypes.
-              </p>
-            </Reveal>
-            <Reveal delay={240}>
-              <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Button to="/projects" size="lg">View Projects</Button>
-                <Button to="/resume" variant="ghost" size="lg" icon={false}>View Résumé</Button>
-                <Button to="/contact" variant="ghost" size="lg" icon={false}>Contact Me</Button>
-              </div>
-            </Reveal>
+            <p className="eyebrow">A little curiosity. A lot of building.</p>
+            <h1 id="intro-title">Hi, I’m Adarsha.<br />I turn ideas into<br /><em>working software.</em></h1>
+            <p className="intro-description">Full-stack developer and CSBS student building web applications with AI and security in mind. Based in Karnataka, open to working everywhere.</p>
+            <div className="editorial-actions"><a className="editorial-primary" href="#selected-work">Explore my work <span aria-hidden="true">↗</span></a><Link className="editorial-link" to="/resume">View résumé <span aria-hidden="true">↗</span></Link></div>
           </div>
-
-          <Reveal delay={200}>
-            <aside className="overflow-hidden rounded-2xl border border-line bg-surface/85 shadow-[0_24px_80px_rgba(0,0,0,0.16)] backdrop-blur" aria-label="Developer snapshot">
-              <div className="flex items-center justify-between border-b border-line px-5 py-4">
-                <span className="meta-sm text-gold">Build profile</span>
-                <span className="font-mono text-xs text-muted">/now</span>
-              </div>
-              <div className="grid grid-cols-3 divide-x divide-line">
-                {buildSignals.map((signal) => (
-                  <div key={signal.label} className="px-3 py-5 text-center">
-                    <strong className="font-display text-2xl font-semibold text-text">{signal.value}</strong>
-                    <span className="mt-1 block text-[0.6875rem] leading-tight text-muted">{signal.label}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-line p-5">
-                <p className="meta-sm text-muted">Working set</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {coreStack.map((item) => <span key={item} className="chip pointer-events-none">{item}</span>)}
-                </div>
-              </div>
-              <div className="border-t border-line bg-surface-2/60 px-5 py-4 font-mono text-xs text-muted">
-                <span className="text-gold">$</span> building useful things, end to end
-              </div>
-            </aside>
-          </Reveal>
+          <Link className="hero-project" to="/projects/nexnethra" aria-label="Explore the Nexnethra case study">
+            <ProjectVisual project={projects[0]} />
+            <div className="hero-project-label"><div><span className="eyebrow">Featured exploration</span><strong>Nexnethra</strong></div><span className="round-arrow" aria-hidden="true">↗</span></div>
+          </Link>
         </div>
+        <div className="intro-bottom"><span>React / Node.js / Python / PostgreSQL</span><span>Thoughtful interfaces. Practical engineering.</span></div>
       </section>
 
-      {/* Focus areas */}
-      <section aria-labelledby="focus-title" className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-          <SectionHeader index="01" title="Where I focus" intro="Full-stack engineering with a security-first mindset and AI as an engineering tool." />
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-6">
-            {capabilities.map((cap, i) => {
-              const Icon = capIcons[i]
-              return (
-                <Reveal key={cap.title} delay={i * 70} className={i < 2 ? 'lg:col-span-3' : 'lg:col-span-2'}>
-                  <div className="group relative h-full overflow-hidden rounded-xl border border-line bg-surface p-7 transition-colors duration-300 hover:border-gold/60">
-                    <span className="absolute right-5 top-4 font-mono text-5xl font-semibold text-line transition-colors group-hover:text-gold-soft" aria-hidden="true">0{i + 1}</span>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-md border border-gold/40 text-gold transition-colors group-hover:bg-gold-soft">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="display-sm mt-5">{cap.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">{cap.body}</p>
-                  </div>
-                </Reveal>
-              )
-            })}
-          </div>
-        </div>
+      <section id="selected-work" className="work-section" aria-labelledby="work-title">
+        <div className="editorial-heading"><div><p className="eyebrow">01 / Selected work</p><h2 id="work-title">Ideas, made tangible.</h2></div><p>A closer look at what I build,<br />how it works, and what I learned.</p></div>
+        {projects.map((project, index) => (
+          <article key={project.slug} className={`work-row ${index % 2 ? 'work-row-reverse' : ''}`}>
+            <Link to={`/projects/${project.slug}`} className="work-image-link" aria-label={`Explore ${project.name}`}><ProjectVisual project={project} /></Link>
+            <div className="work-copy"><p className="eyebrow">0{index + 1} / {project.category}</p><h3>{project.name}</h3><p>{project.tagline}</p><div className="work-tags">{[...(project.stack.frontend || []), ...(project.stack.backend || [])].slice(0, 4).map(tag => <span key={tag}>{tag}</span>)}</div><div className="editorial-actions"><Link className="editorial-link" to={`/projects/${project.slug}`}>Read the case study ↗</Link>{(project.links.demo?.href || project.links.github?.href) && <a className="editorial-link secondary-link" href={project.links.demo?.href || project.links.github.href} target="_blank" rel="noopener noreferrer">{project.links.demo?.href ? 'Visit project' : 'Source code'} ↗</a>}</div></div>
+          </article>
+        ))}
       </section>
 
-      {/* Featured projects */}
-      <section aria-labelledby="work-title" className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeader index="02" title="Selected work" intro="Documented prototypes with public demos or repositories where verification is available." />
-            <Reveal>
-              <Button to="/projects" variant="ghost" icon={false}>
-                All projects
-              </Button>
-            </Reveal>
-          </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-5">
-            {featuredProjects.map((project, i) => (
-              <Reveal key={project.slug} delay={i * 80} className={`h-full ${i === 0 ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
-                <ProjectCard project={project} index={i} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
+      <section className="personal-section" aria-labelledby="personal-title">
+        <div><p className="eyebrow">02 / Behind the code</p><h2 id="personal-title">Still learning.<br /><em>Always building.</em></h2></div>
+        <div className="personal-copy"><p>I’m a second-year Computer Science and Business Systems student at BIET, Davanagere. I’m interested in the space where useful products, AI, and secure engineering meet.</p><p>I learn by building, asking better questions, and following an idea all the way through to a working application.</p><div className="editorial-actions"><Link className="editorial-link" to="/about">A little more about me ↗</Link><Link className="editorial-link secondary-link" to="/journey">My journey ↗</Link></div></div>
       </section>
 
-      {/* Supporting project */}
-      <section aria-labelledby="more-work-title" className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-          <SectionHeader index="03" title="More from the bench" intro="Supporting work that sharpens the same skills — authentication, session security, and responsive UI." />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {supportingProjects.map((project, i) => (
-              <Reveal key={project.slug} delay={i * 80} className="h-full">
-                <ProjectCard project={project} index={i} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Journey teaser */}
-      <section aria-labelledby="journey-title" className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-          <SectionHeader index="04" title="The journey so far" intro="Competitions, leadership, and virtual experiences with proof links where available." />
-          <Reveal className="mt-12 flex flex-wrap items-center gap-4">
-            <Button to="/journey" variant="ghost" icon={false}>
-              Read the journey
-            </Button>
-          </Reveal>
-        </div>
-      </section>
-
-      <CTABlock />
-    </>
+      <section className="editorial-contact" aria-labelledby="contact-title"><p className="eyebrow">Have something in mind?</p><h2 id="contact-title">Let’s build<br /><em>something useful.</em></h2><div className="editorial-actions"><Link className="editorial-primary" to="/contact">Start a conversation ↗</Link><a className="editorial-link" href={`mailto:${profile.email}`}>{profile.email}</a></div></section>
+    </div>
   )
 }
