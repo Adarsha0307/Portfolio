@@ -96,9 +96,10 @@ export default function AboutPage() {
                 <div>
                   <h3 className="meta text-gold">{group.group}</h3>
                   <ul className="mt-4 space-y-2">
-                    {group.items.map((item) => (
-                      <li key={item} className="text-sm text-muted">
-                        {item}
+                    {group.items.map(([name, icon]) => (
+                      <li key={name} className="flex items-center gap-2.5 text-sm text-muted">
+                        <img src={icon} alt="" aria-hidden="true" loading="lazy" className="h-5 w-5 shrink-0 object-contain" />
+                        <span>{name}</span>
                       </li>
                     ))}
                   </ul>

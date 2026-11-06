@@ -4,6 +4,8 @@ import { site } from '../data/site.js'
 import { profile } from '../data/profile.js'
 import { IconGitHub, IconLinkedIn, IconMail } from './icons.jsx'
 
+const SUPPORT_URL = 'https://buymeacoffee.com/adarshabu'
+
 export default function Footer() {
   return (
     <footer className="border-t border-line">
@@ -11,7 +13,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <p className="font-display text-xl font-semibold tracking-tight">
-              <span className="text-gold">Adarsha B U</span>
+              <span className="text-gold">A</span>darsha B U
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
               {profile.headline} Based in Karnataka, India — remote-friendly and building in public.
@@ -55,17 +57,37 @@ export default function Footer() {
             >
               <IconMail className="h-4 w-4" /> {profile.email}
             </a>
-            <span className="inline-flex w-fit items-center gap-2 text-sm text-muted/60">
-              Resume — Coming Soon
-            </span>
+            <Link to="/resume" className="inline-flex w-fit items-center gap-2 text-sm text-muted transition-colors hover:text-gold">
+              View Resume
+            </Link>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-muted">
-            © {new Date().getFullYear()} {profile.name}. Built with React &amp; Tailwind CSS.
+            © {new Date().getFullYear()} {profile.name}. Built with React & Tailwind CSS.
           </p>
           <p className="text-xs text-muted">Last updated {site.lastUpdated}</p>
+        </div>
+        <p className="mt-3 text-xs text-muted">
+          This site logs anonymous visit stats (page, country, device). No IP addresses are stored.
+        </p>
+
+        {/* Support link in footer instead of floating */}
+        <div className="mt-8 pt-6 border-t border-line">
+          <a
+            href={SUPPORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Buy me a coffee — opens in a new tab"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 font-sans text-sm font-medium text-muted transition-colors hover:border-gold/50 hover:text-gold"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden="true">
+              <path d="M5 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V8Z" />
+              <path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M7 21h12M8 4c0 1 1 1 1 2M12 4c0 1 1 1 1 2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span>Buy me a coffee</span>
+          </a>
         </div>
       </div>
     </footer>

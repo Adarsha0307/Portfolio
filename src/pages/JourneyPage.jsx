@@ -40,7 +40,6 @@ export default function JourneyPage() {
             <Timeline items={journey.lead} />
           </Reveal>
           <Reveal className="mt-10">
-            <Badge variant="gold">Note: Forage completions are virtual experiences, not certifications.</Badge>
           </Reveal>
         </div>
       </section>

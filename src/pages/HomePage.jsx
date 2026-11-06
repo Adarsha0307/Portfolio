@@ -13,8 +13,8 @@ import { IconArrowRight, IconShield, IconLayers, IconCpu } from '../components/i
 const capIcons = [IconLayers, IconCpu, IconShield, IconArrowRight]
 
 const buildSignals = [
-  { value: '03', label: 'products shipped' },
-  { value: '20', label: 'stage AI pipeline' },
+  { value: '03', label: 'projects shipped' },
+  { value: '02', label: 'featured projects' },
   { value: '2029', label: 'graduating' },
 ]
 

@@ -11,7 +11,7 @@ export const profile = {
     { label: 'GitHub', href: 'https://github.com/Adarsha0307' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adarsha-b-u-14ab32364' },
   ],
-  resume: { status: 'coming-soon' },
+  resume: { status: 'available', href: '/resume' },
   education: {
     degree: 'B.Tech in Computer Science and Business Systems',
     institution: 'Bapuji Institute of Engineering and Technology, Davanagere',
